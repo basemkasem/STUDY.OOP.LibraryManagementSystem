@@ -1,0 +1,17 @@
+D:\BackEndCourses\Projects\Studying\Study\STUDY.OOP.LibraryManagementSystem\STUDY.OOP.LibraryManagementSystem\bin\Debug\net9.0\STUDY.OOP.LibraryManagementSystem.exe
+D:\BackEndCourses\Projects\Studying\Study\STUDY.OOP.LibraryManagementSystem\STUDY.OOP.LibraryManagementSystem\bin\Debug\net9.0\STUDY.OOP.LibraryManagementSystem.deps.json
+D:\BackEndCourses\Projects\Studying\Study\STUDY.OOP.LibraryManagementSystem\STUDY.OOP.LibraryManagementSystem\bin\Debug\net9.0\STUDY.OOP.LibraryManagementSystem.runtimeconfig.json
+D:\BackEndCourses\Projects\Studying\Study\STUDY.OOP.LibraryManagementSystem\STUDY.OOP.LibraryManagementSystem\bin\Debug\net9.0\STUDY.OOP.LibraryManagementSystem.dll
+D:\BackEndCourses\Projects\Studying\Study\STUDY.OOP.LibraryManagementSystem\STUDY.OOP.LibraryManagementSystem\bin\Debug\net9.0\STUDY.OOP.LibraryManagementSystem.pdb
+D:\BackEndCourses\Projects\Studying\Study\STUDY.OOP.LibraryManagementSystem\STUDY.OOP.LibraryManagementSystem\bin\Debug\net9.0\Spectre.Console.dll
+D:\BackEndCourses\Projects\Studying\Study\STUDY.OOP.LibraryManagementSystem\STUDY.OOP.LibraryManagementSystem\obj\Debug\net9.0\STUDY.OOP.LibraryManagementSystem.csproj.AssemblyReference.cache
+D:\BackEndCourses\Projects\Studying\Study\STUDY.OOP.LibraryManagementSystem\STUDY.OOP.LibraryManagementSystem\obj\Debug\net9.0\STUDY.OOP.LibraryManagementSystem.GeneratedMSBuildEditorConfig.editorconfig
+D:\BackEndCourses\Projects\Studying\Study\STUDY.OOP.LibraryManagementSystem\STUDY.OOP.LibraryManagementSystem\obj\Debug\net9.0\STUDY.OOP.LibraryManagementSystem.AssemblyInfoInputs.cache
+D:\BackEndCourses\Projects\Studying\Study\STUDY.OOP.LibraryManagementSystem\STUDY.OOP.LibraryManagementSystem\obj\Debug\net9.0\STUDY.OOP.LibraryManagementSystem.AssemblyInfo.cs
+D:\BackEndCourses\Projects\Studying\Study\STUDY.OOP.LibraryManagementSystem\STUDY.OOP.LibraryManagementSystem\obj\Debug\net9.0\STUDY.OOP.LibraryManagementSystem.csproj.CoreCompileInputs.cache
+D:\BackEndCourses\Projects\Studying\Study\STUDY.OOP.LibraryManagementSystem\STUDY.OOP.LibraryManagementSystem\obj\Debug\net9.0\STUDY.OO.23714954.Up2Date
+D:\BackEndCourses\Projects\Studying\Study\STUDY.OOP.LibraryManagementSystem\STUDY.OOP.LibraryManagementSystem\obj\Debug\net9.0\STUDY.OOP.LibraryManagementSystem.dll
+D:\BackEndCourses\Projects\Studying\Study\STUDY.OOP.LibraryManagementSystem\STUDY.OOP.LibraryManagementSystem\obj\Debug\net9.0\refint\STUDY.OOP.LibraryManagementSystem.dll
+D:\BackEndCourses\Projects\Studying\Study\STUDY.OOP.LibraryManagementSystem\STUDY.OOP.LibraryManagementSystem\obj\Debug\net9.0\STUDY.OOP.LibraryManagementSystem.pdb
+D:\BackEndCourses\Projects\Studying\Study\STUDY.OOP.LibraryManagementSystem\STUDY.OOP.LibraryManagementSystem\obj\Debug\net9.0\STUDY.OOP.LibraryManagementSystem.genruntimeconfig.cache
+D:\BackEndCourses\Projects\Studying\Study\STUDY.OOP.LibraryManagementSystem\STUDY.OOP.LibraryManagementSystem\obj\Debug\net9.0\ref\STUDY.OOP.LibraryManagementSystem.dll
