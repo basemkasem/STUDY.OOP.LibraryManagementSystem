@@ -15,3 +15,4 @@ D:\BackEndCourses\Projects\Studying\Study\STUDY.OOP.LibraryManagementSystem\STUD
 D:\BackEndCourses\Projects\Studying\Study\STUDY.OOP.LibraryManagementSystem\STUDY.OOP.LibraryManagementSystem\obj\Debug\net9.0\STUDY.OOP.LibraryManagementSystem.pdb
 D:\BackEndCourses\Projects\Studying\Study\STUDY.OOP.LibraryManagementSystem\STUDY.OOP.LibraryManagementSystem\obj\Debug\net9.0\STUDY.OOP.LibraryManagementSystem.genruntimeconfig.cache
 D:\BackEndCourses\Projects\Studying\Study\STUDY.OOP.LibraryManagementSystem\STUDY.OOP.LibraryManagementSystem\obj\Debug\net9.0\ref\STUDY.OOP.LibraryManagementSystem.dll
+D:\BackEndCourses\Projects\Studying\Study\STUDY.OOP.LibraryManagementSystem\STUDY.OOP.LibraryManagementSystem\obj\Debug\net9.0\STUDY.OOP.LibraryManagementSystem.sourcelink.json
