@@ -2,7 +2,7 @@ namespace STUDY.OOP.LibraryManagementSystem.Models;
 
 public abstract class LibraryItem
 {
-    public int Id { get; set; }
+    public int Id { get; set; } 
     public string Title { get; set; }
     public string Location { get; set; }
 

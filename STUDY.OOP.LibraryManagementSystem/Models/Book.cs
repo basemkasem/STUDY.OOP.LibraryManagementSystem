@@ -1,7 +1,6 @@
 using Spectre.Console;
-using STUDY.OOP.LibraryManagementSystem.Models;
 
-namespace STUDY.OOP.LibraryManagementSystem;
+namespace STUDY.OOP.LibraryManagementSystem.Models;
 
 public class Book : LibraryItem
 {
@@ -21,9 +20,9 @@ public class Book : LibraryItem
     {
         Panel panel = new(
             new Markup($"[Bold]Book[/]: [cyan]{Title}[/] by [cyan]{Author}[/]" +
-                       $"[Bold]Pages[/]: [yellow]{Pages}[/]" +
-                       $"[Bold]Category[/]: [green]{Category}[/]" +
-                       $"[Bold]Location[/]: [blue]{Location}[/]"))
+                       $"\n[Bold]Pages[/]: [yellow]{Pages}[/]" +
+                       $"\n[Bold]Category[/]: [green]{Category}[/]" +
+                       $"\n[Bold]Location[/]: [blue]{Location}[/]"))
         {
             Border = BoxBorder.Rounded
             //BorderStyle = new Style(foreground: Color.Cyan)

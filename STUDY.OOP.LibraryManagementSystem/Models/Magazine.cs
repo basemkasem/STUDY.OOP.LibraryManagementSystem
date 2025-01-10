@@ -8,7 +8,7 @@ public class Magazine : LibraryItem
     public DateTime PublishDate { get; set; }
     public int IssueNumber { get; set; }
 
-    public Magazine(int id, string title, string location, string publisher, DateTime publishDate, int issueNumber) :
+    public Magazine(int id, string title, string location,  DateTime publishDate, string publisher, int issueNumber) :
         base(id, title, location)
     {
         Publisher = publisher;
@@ -20,9 +20,9 @@ public class Magazine : LibraryItem
     {
         Panel panel = new(
             new Markup($"[Bold]Magazine[/]: [cyan]{Title}[/] by [cyan]{Publisher}[/]" +
-                       $"[Bold]Publish Date[/]: [yellow]{PublishDate}[/]" +
-                       $"[Bold]Issue Number[/]: [green]{IssueNumber}[/]" +
-                       $"[Bold]Location[/]: [blue]{Location}[/]"))
+                       $"\n[Bold]Publish Date[/]: [yellow]{PublishDate}[/]" +
+                       $"\n[Bold]Issue Number[/]: [green]{IssueNumber}[/]" +
+                       $"\n[Bold]Location[/]: [blue]{Location}[/]"))
         {
             Border = BoxBorder.Rounded
             //BorderStyle = new Style(foreground: Color.Cyan)

@@ -1,4 +1,5 @@
 using Spectre.Console;
+using STUDY.OOP.LibraryManagementSystem.Models;
 
 namespace STUDY.OOP.LibraryManagementSystem;
 
@@ -6,28 +7,51 @@ public class BooksController
 {
     public void ViewBooks()
     {
-        AnsiConsole.MarkupLine("[yellow]List of books:[/]");
-        foreach (Book book in MockDatabase.Books)
+        Table table = new Table();
+        table.Border(TableBorder.Rounded);
+
+        table.AddColumn("[yellow]ID[/]");
+        table.AddColumn("[yellow]Title[/]");
+        table.AddColumn("[yellow]Author[/]");
+        table.AddColumn("[yellow]Category[/]");
+        table.AddColumn("[yellow]Location[/]");
+        table.AddColumn("[yellow]Pages[/]");
+
+        List<Book> books = MockDatabase.LibraryItems.OfType<Book>().ToList();
+
+        foreach (Book book in books)
         {
-            AnsiConsole.MarkupLine($"- [cyan]{book.Name}[/] - [yellow]{book.Pages}[/] pages");
+            table.AddRow(
+                book.Id.ToString(),
+                $"[cyan]{book.Title}[/]",
+                $"[cyan]{book.Author}[/]",
+                $"[green]{book.Category}[/]",
+                $"[blue]{book.Location}[/]",
+                book.Pages.ToString());
         }
 
+        AnsiConsole.Write(table);
         AnsiConsole.MarkupLine("Press any key to Continue.");
         Console.ReadKey();
     }
 
     public void AddBook()
     {
-        string title = AnsiConsole.Ask<string>("Enter the [cyan]title[/] of the book to add:");
-        int pages  = AnsiConsole.Ask<int>("Enter the [yellow]number of pages[/] of the book:");
-        if (MockDatabase.Books.Exists(b => b.Name.Equals(title, StringComparison.OrdinalIgnoreCase)))
+        string title = AnsiConsole.Ask<string>("Enter the [green]title[/] of the book to add:");
+        string author = AnsiConsole.Ask<string>("Enter the [green]author[/] of the book:");
+        string category = AnsiConsole.Ask<string>("Enter the [green]category[/] of the book:");
+        string location = AnsiConsole.Ask<string>("Enter the [green]location[/] of the book:");
+        int pages = AnsiConsole.Ask<int>("Enter the [green]number of pages[/] in the book:");
+
+        if (MockDatabase.LibraryItems.OfType<Book>()
+            .Any(b => b.Title.Equals(title, StringComparison.OrdinalIgnoreCase)))
         {
             AnsiConsole.MarkupLine("[red]Book already exists![/]");
         }
         else
         {
-            Book book = new Book(title, pages);
-            MockDatabase.Books.Add(book);
+            Book book = new Book(MockDatabase.LibraryItems.Count + 1, title, author, category, location, pages);
+            MockDatabase.LibraryItems.Add(book);
             AnsiConsole.MarkupLine("[green]Book added successfully![/]");
         }
 
@@ -37,9 +61,11 @@ public class BooksController
 
     public void DeleteBook()
     {
-        if (MockDatabase.Books.Count == 0)
+        List<Book> books = MockDatabase.LibraryItems.OfType<Book>().ToList();
+        if (books.Count == 0)
         {
             AnsiConsole.MarkupLine("[red]No books to delete![/]");
+            AnsiConsole.MarkupLine("\nPress any key to Continue.");
             Console.ReadKey();
             return;
         }
@@ -47,15 +73,11 @@ public class BooksController
         Book bookToDelete = AnsiConsole.Prompt(
             new SelectionPrompt<Book>()
                 .Title("Select a [red]book[/] to delete:")
-                .UseConverter(b => $"{b.Name} - {b.Pages} pages")
-                .AddChoices(MockDatabase.Books));
-        if (MockDatabase.Books.Remove(bookToDelete))
-        {
-            AnsiConsole.MarkupLine("[green]Book deleted successfully![/]");
-        }
-        else
-        {
-            AnsiConsole.MarkupLine("[red]Book not found![/]");
-        }
+                .UseConverter(b => $"{b.Title} - {b.Pages} pages")
+                .AddChoices(books));
+        MockDatabase.LibraryItems.Remove(bookToDelete);
+        AnsiConsole.MarkupLine("[Yellow]Book deleted successfully![/]");
+        AnsiConsole.MarkupLine("\nPress any key to Continue.");
+        Console.ReadKey();
     }
 }
