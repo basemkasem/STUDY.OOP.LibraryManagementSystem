@@ -2,38 +2,32 @@ using Spectre.Console;
 
 namespace STUDY.OOP.LibraryManagementSystem;
 
-public static class BooksController
+public class BooksController
 {
-    
-    private static List<string> _books = 
-    [
-        "The Great Gatsby", "To Kill a Mockingbird", "1984", "Pride and Prejudice", "The Catcher in the Rye", "The Hobbit",
-        "Moby-Dick", "War and Peace", "The Odyssey", "The Lord of the Rings", "Jane Eyre", "Animal Farm", "Brave New World",
-        "The Chronicles of Narnia", "The Diary of a Young Girl", "The Alchemist", "Wuthering Heights", "Fahrenheit 451",
-        "Catch-22", "The Hitchhiker's Guide to the Galaxy"
-    ];
-    public static void ViewBooks()
+    public void ViewBooks()
     {
         AnsiConsole.MarkupLine("[yellow]List of books:[/]");
-        foreach (string book in _books)
+        foreach (Book book in MockDatabase.Books)
         {
-            AnsiConsole.MarkupLine($"- [cyan]{book}[/]");
+            AnsiConsole.MarkupLine($"- [cyan]{book.Name}[/] - [yellow]{book.Pages}[/] pages");
         }
 
         AnsiConsole.MarkupLine("Press any key to Continue.");
         Console.ReadKey();
     }
 
-    public static void AddBook()
+    public void AddBook()
     {
         string title = AnsiConsole.Ask<string>("Enter the [cyan]title[/] of the book to add:");
-        if (_books.Contains(title))
+        int pages  = AnsiConsole.Ask<int>("Enter the [yellow]number of pages[/] of the book:");
+        if (MockDatabase.Books.Exists(b => b.Name.Equals(title, StringComparison.OrdinalIgnoreCase)))
         {
             AnsiConsole.MarkupLine("[red]Book already exists![/]");
         }
         else
         {
-            _books.Add(title);
+            Book book = new Book(title, pages);
+            MockDatabase.Books.Add(book);
             AnsiConsole.MarkupLine("[green]Book added successfully![/]");
         }
 
@@ -41,20 +35,21 @@ public static class BooksController
         Console.ReadKey();
     }
 
-    public static void DeleteBook()
+    public void DeleteBook()
     {
-        if (_books.Count == 0)
+        if (MockDatabase.Books.Count == 0)
         {
             AnsiConsole.MarkupLine("[red]No books to delete![/]");
             Console.ReadKey();
             return;
         }
 
-        string bookToDelete = AnsiConsole.Prompt(
-            new SelectionPrompt<string>()
+        Book bookToDelete = AnsiConsole.Prompt(
+            new SelectionPrompt<Book>()
                 .Title("Select a [red]book[/] to delete:")
-                .AddChoices(_books));
-        if (_books.Remove(bookToDelete))
+                .UseConverter(b => $"{b.Name} - {b.Pages} pages")
+                .AddChoices(MockDatabase.Books));
+        if (MockDatabase.Books.Remove(bookToDelete))
         {
             AnsiConsole.MarkupLine("[green]Book deleted successfully![/]");
         }

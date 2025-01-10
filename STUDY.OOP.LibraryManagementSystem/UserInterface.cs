@@ -2,29 +2,36 @@ using Spectre.Console;
 
 namespace STUDY.OOP.LibraryManagementSystem;
 
-public static class UserInterface
+public class UserInterface
 {
-    public static void MainMenu()
+    private BooksController _booksController;
+
+    public UserInterface()
+    {
+        _booksController = new BooksController();
+    }
+
+    public void MainMenu()
     {
         while (true)
         {
             Console.Clear();
-            
+
             var choice = AnsiConsole.Prompt(
                 new SelectionPrompt<Enums.MenuOption>()
                     .Title("What do you want to do next?")
                     .AddChoices(Enum.GetValues<Enums.MenuOption>()));
-            
+
             switch (choice)
             {
                 case Enums.MenuOption.ViewBooks:
-                    BooksController.ViewBooks();
+                    _booksController.ViewBooks();
                     break;
                 case Enums.MenuOption.AddBook:
-                    BooksController.AddBook();
+                    _booksController.AddBook();
                     break;
                 case Enums.MenuOption.DeleteBook:
-                    BooksController.DeleteBook();
+                    _booksController.DeleteBook();
                     break;
                 case Enums.MenuOption.Exit:
                     Environment.Exit(0);
